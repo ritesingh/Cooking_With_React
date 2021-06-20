@@ -1,10 +1,11 @@
 import React from 'react'
+import IngredientList from './IngredientList'
 
-export default function Recipe() {
+export default function Recipe({name, cookTime, servings, instructions, ingredients}) {
     return (
         <div>
             <div>
-                <h3>Plain Chicken</h3>
+                <h3>{name}</h3>
                 <div>
                     <button>Edit</button>
                     <button>Delete</button>
@@ -12,18 +13,22 @@ export default function Recipe() {
             </div>
             <div>
                 <span>Cook Time</span>
-                <span>1:45</span>
+                <span>{cookTime}</span>
             </div>
             <div>
                 <span>Servings:</span>
-                <span>3</span>
+                <span>{servings}</span>
             </div>
             <div>
                 <span>Instruction:</span>
                 <div>
-                    1. Put Salt on Chicken
-                    2. Put chciken on table 
-                    3. eat the Chicken
+                    {instructions}
+                </div>
+            </div>
+            <div>
+                <span>Ingredients:</span>
+                <div>
+                    <IngredientList ingredients= {ingredients}></IngredientList>
                 </div>
             </div>
         </div>
